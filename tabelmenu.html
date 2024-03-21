@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Choice with Checkboxes</title>
+</head>
+<body>
+  <style>
+    body {
+      background: yellow;
+    }
+    h2 {
+      background: blue;
+    }
+  </style>
+  <strong>
+  <h2>Pilih menu berikut:</h2>
+    <input type="checkbox" id="interest1" name="interest" value="Ayam kecap">
+    <label for="interest1">Ayam kecap</label><br>
+    <input type="checkbox" id="interest2" name="interest" value="Ayam bakar">
+    <label for="interest2">Ayam bakar</label><br>
+    <input type="checkbox" id="interest3" name="interest" value="Ayam rendang">
+    <label for="interest3">Ayam rendang</label>
+    <br>
+    <br>
+    <button onclick="getSelectedInterests()">Tekan untuk melanjutkan</button>
+    <script>
+        function getSelectedInterests() {
+            const selectedInterests = [];
+            const checkboxes = document.querySelectorAll('input[name="interest"]:checked');
+            checkboxes.forEach((checkbox) => {
+                selectedInterests.push(checkbox.value);
+            });
+            alert('Selected Interests: ' + selectedInterests.join(', '));
+        }
+    </script>
+</body>
+</html>
